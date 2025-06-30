@@ -1,0 +1,14 @@
+@font-face {
+   font-family: 'Changa One';
+   font-style: regular;
+   font-display: swap;
+   font-weight: 400;
+   src: url('file:///Users/ujka/Downloads/20250630_015734/fonts/Changa One/regular.ttf') format('truetype');
+}
+@font-face {
+   font-family: 'Changa One';
+   font-style: italic;
+   font-display: swap;
+   font-weight: 400;
+   src: url('file:///Users/ujka/Downloads/20250630_015734/fonts/Changa One/italic.ttf') format('truetype');
+}
