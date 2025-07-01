@@ -92,21 +92,31 @@
             <div class="col-md-10 align-center">
                 <section class="header1 cid-uPDTXtSgHe mbr-fullscreen" id="header16-6w">
   <style>
-    @media (max-width: 768px) {
-      .custom-title-line1 {
-        font-size: 2rem !important;
-      }
-      .custom-title-line2 {
-        font-size: 2rem !important;
-      }
+    .main-headline {
+      text-align: center;
+      line-height: 1.2;
+    }
+
+    .main-headline .line1,
+    .main-headline .line2 {
+      display: block;
+      font-weight: bold;
+      font-size: clamp(2rem, 6vw, 4rem); /* Scales between mobile and desktop */
+      white-space: nowrap;
+    }
+
+    .main-headline .line2 em {
+      font-style: italic;
+      font-weight: normal;
     }
   </style>
+
   <div class="container">
     <div class="row justify-content-md-center">
       <div class="col-md-10 text-center">
-        <h1 class="mbr-section-title pb-3 mbr-fonts-style display-1">
-          <span class="custom-title-line1" style="white-space: nowrap;"><strong>helping&nbsp;creators</strong></span><br>
-          <span class="custom-title-line2"><strong>create</strong> <em style="font-weight: normal;">clips</em><strong>.</strong></span>
+        <h1 class="mbr-section-title pb-3 mbr-fonts-style display-1 main-headline">
+          <span class="line1"><strong>helping creators</strong></span>
+          <span class="line2"><strong>create</strong> <em>clips</em><strong>.</strong></span>
         </h1>
         <div class="mbr-section-btn">
           <a class="btn btn-md btn-info-outline display-7" href="index.html#team1-6n">Clients</a>
@@ -116,6 +126,7 @@
     </div>
   </div>
 </section>
+
 
 
 
