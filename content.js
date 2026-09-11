@@ -14,21 +14,21 @@ const CREATORS = [
   {
     name: "Andrew Schulz",
     role: "Comedian",
-    img: "https://onbrandone.com/assets/images/andrew-schulz-the-life-tour-two-sold-out-nights-madison-square-garden-new-york-2024.jpg.webp",
+    img: "assets/andrew-schulz.png",
     link: "https://www.instagram.com/andrewschulz/",
     linkLabel: "Instagram"
   },
   {
     name: "Graham Stephan",
     role: "Personal finance creator",
-    img: "https://onbrandone.com/assets/images/106938914-1631136036935-graham-stephan-3.jpeg",
+    img: "assets/graham-stephan.png",
     link: "https://www.youtube.com/@GrahamStephan",
     linkLabel: "YouTube"
   },
   {
     name: "Charlamagne",
     role: "Radio host and entrepreneur",
-    img: "https://onbrandone.com/assets/images/charlamagne-tha-god-promo-shots-22-15072022-314201d0cccd47e9a7cab16512eaee5e-6.jpeg",
+    img: "assets/charlamagne.webp",
     link: "https://www.instagram.com/cthagod/",
     linkLabel: "Instagram"
   },
@@ -47,13 +47,6 @@ const CREATORS = [
     linkLabel: "YouTube"
   },
   {
-    name: "Ireland Boys",
-    role: "Content creators",
-    img: "https://onbrandone.com/assets/images/channels4-profile-5.png",
-    link: "https://www.instagram.com/irelandboysproductions/",
-    linkLabel: "Instagram"
-  },
-  {
     name: "Caleb Hammer",
     role: "Personal finance creator",
     img: "assets/caleb-hammer.png",
@@ -65,25 +58,25 @@ const CREATORS = [
 const PODCASTS = [
   {
     name: "Flagrant",
-    img: "https://onbrandone.com/assets/images/ab6765630000ba8ab01a26722d5e72b2ed270f35.jpeg",
+    img: "assets/flagrant.png",
     link: "https://www.youtube.com/@OfficialFlagrant/",
     linkLabel: "YouTube"
   },
   {
     name: "Iced Coffee Hour",
-    img: "https://onbrandone.com/assets/images/ab6765630000ba8a3b50cfe272532295c7e1a2e0.jpeg",
+    img: "assets/iced-coffee-hour.avif",
     link: "https://www.youtube.com/@TheIcedCoffeeHour",
     linkLabel: "YouTube"
   },
   {
     name: "Brilliant Idiots",
-    img: "https://onbrandone.com/assets/images/1200x1200bf.webp",
+    img: "assets/brilliant-idiots.jpg",
     link: "https://www.youtube.com/@BrilliantIdiotsPod",
     linkLabel: "YouTube"
   },
   {
     name: "It Is What It Is",
-    img: "https://onbrandone.com/assets/images/channels4-profile-6.jpg",
+    img: "assets/it-is-what-it-is.jpeg",
     link: "https://www.youtube.com/@itiswhatitispodcast1",
     linkLabel: "YouTube"
   },
@@ -294,6 +287,24 @@ function renderHeroTimeline(elementId, data){
       </a>`;
   }).join('');
 
+  const lastMoment = data.moments[data.moments.length - 1];
+  const lastPct = Math.min(96, Math.max(4, (timecodeToSeconds(lastMoment.time) / totalSeconds) * 100));
+  // Arrow is drawn in a fixed-size 150x80 box. The tip sits at local (140,62) and
+  // must land exactly on the dot (track's horizontal lastPct%, vertical center).
+  // The tail sits at local (6,6) — the text anchors its right edge there.
+  const arrowLeft = `calc(${lastPct}% - 140px)`;
+  const tailX = `calc(${lastPct}% - 134px)`;
+  const callout = `
+    <svg class="clip-callout-arrow" viewBox="0 0 150 80" width="150" height="80" style="left:${arrowLeft}" aria-hidden="true">
+      <defs>
+        <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
+        </marker>
+      </defs>
+      <path d="M 6 6 C 55 2, 110 22, 140 62" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
+    </svg>
+    <span class="clip-callout-text" style="left:${tailX}" aria-hidden="true">some of our top performing clips</span>`;
+
   el.innerHTML = `
     <div class="ruler-track-wrap">
       <div class="ruler-track">
@@ -301,6 +312,7 @@ function renderHeroTimeline(elementId, data){
         <div class="ruler-baseline"></div>
         <div class="scrub-line" aria-hidden="true"></div>
         ${marks}
+        ${callout}
       </div>
     </div>
   `;
