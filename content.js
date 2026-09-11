@@ -35,14 +35,14 @@ const CREATORS = [
   {
     name: "Jay Shetty",
     role: "Author and podcast host",
-    img: "https://onbrandone.com/assets/images/channels4-profile-5.png",
+    img: "assets/jay-shetty.jpeg",
     link: "https://www.youtube.com/@jayshetty",
     linkLabel: "YouTube"
   },
   {
     name: "Mike Majlak",
     role: "Content creator and host",
-    img: "https://onbrandone.com/assets/images/channels4-profile-5.png",
+    img: "assets/mike-majlak.png",
     link: "https://www.youtube.com/@mikemajlak",
     linkLabel: "YouTube"
   },
@@ -52,6 +52,13 @@ const CREATORS = [
     img: "https://onbrandone.com/assets/images/channels4-profile-5.png",
     link: "https://www.instagram.com/irelandboysproductions/",
     linkLabel: "Instagram"
+  },
+  {
+    name: "Caleb Hammer",
+    role: "Personal finance creator",
+    img: "assets/caleb-hammer.png",
+    link: "https://www.youtube.com/calebhammer",
+    linkLabel: "YouTube"
   }
 ];
 
@@ -82,8 +89,14 @@ const PODCASTS = [
   },
   {
     name: "Impaulsive",
-    img: "https://onbrandone.com/assets/images/ab6765630000ba8ab01a26722d5e72b2ed270f35.jpeg",
+    img: "assets/impaulsive-logo.webp",
     link: "https://www.youtube.com/@Impaulsive",
+    linkLabel: "YouTube"
+  },
+  {
+    name: "Financial Audit",
+    img: "assets/financial-audit-logo.png",
+    link: "https://www.youtube.com/calebhammer",
     linkLabel: "YouTube"
   }
 ];
@@ -551,29 +564,3 @@ function wireMailLinks(){
   });
 }
 document.addEventListener('DOMContentLoaded', wireMailLinks);
-
-function wireNavToggle(){
-  const btn = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  if(!btn || !links) return;
-
-  btn.addEventListener('click', () => {
-    const open = links.classList.toggle('open');
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-  });
-
-  links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  window.addEventListener('resize', () => {
-    if(window.innerWidth > 640 && links.classList.contains('open')){
-      links.classList.remove('open');
-      btn.setAttribute('aria-expanded', 'false');
-    }
-  });
-}
-document.addEventListener('DOMContentLoaded', wireNavToggle);
