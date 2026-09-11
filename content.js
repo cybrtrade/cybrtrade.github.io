@@ -294,18 +294,18 @@ function renderHeroTimeline(elementId, data){
 
   const lastMoment = data.moments[data.moments.length - 1];
   const lastPct = Math.min(96, Math.max(4, (timecodeToSeconds(lastMoment.time) / totalSeconds) * 100));
-  const arrowLeft = `calc(${lastPct}% - 142px)`;
-  const tailX = `calc(${lastPct}% - 152px)`;
   const callout = `
-    <svg class="clip-callout-arrow" viewBox="0 0 150 90" width="150" height="90" style="left:${arrowLeft}; --dot-pct:${lastPct}%;" aria-hidden="true">
-      <defs>
-        <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
-          <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
-        </marker>
-      </defs>
-      <path d="M 6 12 C 55 4, 110 35, 140 74" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
-    </svg>
-    <span class="clip-callout-text" style="left:${tailX}; --dot-pct:${lastPct}%;" aria-hidden="true">some of our top performing clips</span>`;
+    <div class="clip-callout" style="left:${lastPct}%;">
+      <span class="clip-callout-text" aria-hidden="true">some of our top performing clips</span>
+      <svg class="clip-callout-arrow" viewBox="0 0 150 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
+          </marker>
+        </defs>
+        <path d="M 6 12 C 55 4, 110 35, 140 74" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
+      </svg>
+    </div>`;
 
   el.innerHTML = `
     <div class="ruler-track-wrap">

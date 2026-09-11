@@ -265,27 +265,31 @@ nav.wrap{
   transform:translateX(-50%) translateY(0) scale(1);
 }
 
-.clip-callout-arrow{
+.clip-callout{
   position:absolute;
-  top:8px;
-  left:calc(var(--dot-pct, 85%) - 142px);
+  top:50%;
+  transform:translate(-100%, -100%);
+  margin-bottom:8px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  width:150px;
   pointer-events:none;
   z-index:4;
-  display:block;
 }
 .clip-callout-text{
-  position:absolute;
-  top:-14px;
-  left:calc(var(--dot-pct, 85%) - 152px);
-  transform:translateX(-100%);
   font-family:'Caveat',cursive;
   font-weight:700;
   font-size:24px;
   line-height:1.15;
   color:#ffffff;
   white-space:nowrap;
-  pointer-events:none;
-  z-index:4;
+  margin-bottom:-4px;
+}
+.clip-callout-arrow{
+  width:100%;
+  height:auto;
+  display:block;
 }
 
 /* marquee */
@@ -502,19 +506,15 @@ footer .meta{
   .page-head h1{ font-size:32px; }
   .hero .actions{ flex-wrap:wrap; row-gap:16px; }
   .contact-block h1{ font-size:30px; }
+  .clip-callout{ width:118px; }
+  .clip-callout-text{ font-size:19px; }
 }
 
 @media (max-width:520px){
   .ruler-track{ height:88px; }
-  .clip-callout-arrow{
-    top:-18px;
-    left:calc(var(--dot-pct, 85%) - 65px) !important;
-  }
-  .clip-callout-text{
-    top:-40px;
-    left:calc(var(--dot-pct, 85%) - 71px) !important;
-    font-size:16px !important;
-  }
+  .clip-callout{ width:96px; margin-bottom:10px; }
+  .clip-callout-text{ font-size:15px; }
+  .moment-dot{ width:16px; height:16px; border-width:3px; }
   .grid, .podcast-grid{ grid-template-columns:1fr 1fr; }
   footer .row{ flex-direction:column; align-items:flex-start; }
   .growth-card{ padding:20px; }
@@ -632,25 +632,29 @@ a:focus-visible, button:focus-visible{
 }
 .moment-card-cta{ font-size:12px; color:var(--muted); display: block; }
 
-.clip-callout-arrow{
+.clip-callout{
   position:absolute;
-  top:-14px;
-  left:calc(var(--dot-pct, 85%) - 142px);
+  top:50%;
+  transform:translate(-100%, -100%);
+  margin-bottom:14px;
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  width:150px;
   pointer-events:none;
   z-index:4;
-  display:block;
 }
 .clip-callout-text{
-  position:absolute;
-  top:-34px;
-  left:calc(var(--dot-pct, 85%) - 152px);
-  transform:translateX(-100%);
   font-family:'Caveat',cursive;
   font-weight:700;
   font-size:24px;
   line-height:1.15;
   color:#ffffff;
   white-space:nowrap;
-  pointer-events:none;
-  z-index:4;
+  margin-bottom:-4px;
+}
+.clip-callout-arrow{
+  width:100%;
+  height:auto;
+  display:block;
 }
