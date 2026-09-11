@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<title>Results — OnBrand One</title>
+<meta name="description" content="What clipping with OnBrand One has done for creators and shows.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo"><span>OnBrand</span> One</a>
+    <div class="nav-links">
+      <a href="clients.html" class="nav-link">Clients</a>
+      <a href="results.html" class="nav-link active">Results</a>
+      <a href="contact.html" class="btn">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<div class="page-head text-center">
+  <div class="wrap">
+    <h1>Guess the Growth Moment</h1>
+    <p class="lede">Guess where we started working with these clients. Click on the charts below to see how close you are.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <section class="growth-game" id="growth-game"></section>
+  
+  <div class="growth-cta text-center">
+    <h2>Want to see a jump like this for your own show?</h2>
+    <a href="mailto:arbiujka@gmail.com" class="btn">Email us to get started</a>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stats-grid" id="stats-grid"></div>
+</div>
+
+<section class="results-scroll" id="results-scroll"></section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <h2>Got long-form footage sitting around? Let's clip it.</h2>
+      <a href="contact.html" class="btn">Get in touch</a>
+    </div>
+    <div class="meta">
+      <span>© 2026 OnBrand One</span>
+      <a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script>
+  renderGrowthGame('growth-game', GROWTH_CHALLENGES);
+  renderStats('stats-grid', STATS);
+  if(typeof renderResultsScroll === 'function' && typeof RESULTS !== 'undefined'){
+    renderResultsScroll('results-scroll', RESULTS);
+  }
+</script>
+</body>
+</html>

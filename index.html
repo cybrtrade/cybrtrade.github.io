@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, viewport-fit=cover">
+<title>OnBrand One — helping creators create clips</title>
+<meta name="description" content="OnBrand One edits long-form video into clips for comedians, podcasts, and creators.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="above-fold">
+<header>
+  <nav class="wrap">
+    <a href="index.html" class="logo"><span>OnBrand</span> One</a>
+    <div class="nav-links">
+      <a href="clients.html" class="nav-link">Clients</a>
+      <a href="results.html" class="nav-link">Results</a>
+      <a href="contact.html" class="btn">Get in touch</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-content">
+    <h1>We find the <mark>moments</mark> people remember.</h1>
+    <div class="actions">
+      <a href="contact.html" class="btn">Get in touch</a>
+      <a href="clients.html" class="secondary">See who we work with</a>
+    </div>
+  </div>
+  <div class="hero-ruler" id="hero-ruler"></div>
+</section>
+
+<div class="marquee-section">
+  <div class="marquee-track" id="marquee-track"></div>
+</div>
+</div>
+
+<section class="people" id="creators">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Creators</h2>
+      <p><a href="clients.html#creators" class="nav-link">View all ↗</a></p>
+    </div>
+    <div class="grid" id="creators-grid"></div>
+  </div>
+</section>
+
+<section class="people" id="podcasts">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Podcasts</h2>
+      <p><a href="clients.html#podcasts" class="nav-link">View all ↗</a></p>
+    </div>
+    <div class="podcast-grid" id="podcasts-grid"></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <h2>Got long-form footage sitting around? Let's clip it.</h2>
+      <a href="contact.html" class="btn">Get in touch</a>
+    </div>
+    <div class="meta">
+      <span>© 2026 OnBrand One</span>
+      <a data-linkedin href="#" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script>
+  renderHeroTimeline('hero-ruler', EPISODE_TIMELINE);
+  renderCreatorGrid('creators-grid', CREATORS);
+  renderPodcastGrid('podcasts-grid', PODCASTS);
+  renderMarquee('marquee-track', MARQUEE_NAMES);
+  initMarqueeResizeHandling('marquee-track', MARQUEE_NAMES);
+</script>
+</body>
+</html>
