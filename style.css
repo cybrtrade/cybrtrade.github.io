@@ -624,26 +624,23 @@ a:focus-visible, button:focus-visible{
 }
 .moment-card-cta{ font-size:12px; color:var(--muted); display: block; }
 
-.clip-callout-arrow {
-  position: absolute;
-  top: -14px;
-  right: 50px;
-  pointer-events: none;
-  z-index: 4;
-  display: block;
+.clip-callout-arrow{
+  position:absolute;
+  top:-14px;
+  pointer-events:none;
+  z-index:4;
+  display:block;
 }
-
-.clip-callout-text {
-  position: absolute;
-  top: -34px;
-  right: 0;
-  transform: none; /* Overrides the previous -100% translation */
-  font-family: 'Caveat', cursive;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.15;
-  color: #ffffff;
-  white-space: nowrap;
-  pointer-events: none;
-  z-index: 4;
+.clip-callout-text{
+  position:absolute;
+  top:-34px;
+  transform:translateX(-100%);
+  font-family:'Caveat',cursive;
+  font-weight:700;
+  font-size:24px;
+  line-height:1.15;
+  color:#ffffff;
+  white-space:nowrap;
+  pointer-events:none;
+  z-index:4;
 }

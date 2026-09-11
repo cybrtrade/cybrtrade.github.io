@@ -1,10 +1,3 @@
-/* ============================================================
-   EDIT YOUR CONTENT HERE. This one file feeds every page on the
-   site (home, creators, podcasts, results). Add, remove, or
-   reorder entries in these lists and the relevant pages rebuild
-   themselves automatically. No HTML editing required.
-   ============================================================ */
-
 const SITE = {
   email: "arbiujka@gmail.com",
   linkedin: "https://linkedin.com/company/onbrand1"
@@ -299,16 +292,20 @@ function renderHeroTimeline(elementId, data){
       </a>`;
   }).join('');
 
+  const lastMoment = data.moments[data.moments.length - 1];
+  const lastPct = Math.min(96, Math.max(4, (timecodeToSeconds(lastMoment.time) / totalSeconds) * 100));
+  const arrowLeft = `calc(${lastPct}% - 142px)`;
+  const tailX = `calc(${lastPct}% - 152px)`;
   const callout = `
-    <svg class="clip-callout-arrow" viewBox="0 0 150 90" width="150" height="90" aria-hidden="true">
+    <svg class="clip-callout-arrow" viewBox="0 0 150 90" width="150" height="90" style="left:${arrowLeft}" aria-hidden="true">
       <defs>
         <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
           <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
         </marker>
       </defs>
-      <path d="M 144 12 C 95 4, 40 35, 10 74" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
+      <path d="M 6 12 C 55 4, 110 35, 140 74" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
     </svg>
-    <span class="clip-callout-text" aria-hidden="true">some of our top performing clips</span>`;
+    <span class="clip-callout-text" style="left:${tailX}" aria-hidden="true">some of our top performing clips</span>`;
 
   el.innerHTML = `
     <div class="ruler-track-wrap">
