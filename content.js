@@ -296,7 +296,7 @@ function renderHeroTimeline(elementId, data){
   const lastPct = Math.min(96, Math.max(4, (timecodeToSeconds(lastMoment.time) / totalSeconds) * 100));
   const callout = `
     <div class="clip-callout" style="left:${lastPct}%;">
-      <span class="clip-callout-text" aria-hidden="true">some of our top performing clips</span>
+      <span class="clip-callout-text" aria-hidden="true">some of our<br>top performing clips</span>
       <svg class="clip-callout-arrow" viewBox="0 0 150 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>
           <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
