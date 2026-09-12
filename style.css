@@ -268,7 +268,7 @@ nav.wrap{
 .clip-callout{
   position:absolute;
   top:50%;
-  transform:translate(calc(-100% + 30px), -100%);
+  transform:translate(-100%, -100%);
   margin-bottom:14px;
   display:flex;
   flex-direction:column;
@@ -277,12 +277,14 @@ nav.wrap{
   z-index:4;
 }
 .clip-callout-text{
+  width:140px;
+  align-self:center;
   font-family:'Caveat',cursive;
   font-weight:700;
-  font-size:24px;
-  line-height:1.2;
+  font-size:19px;
+  line-height:1.25;
   color:#ffffff;
-  text-align:right;
+  text-align:center;
   margin-bottom:2px;
 }
 .clip-callout-arrow{
@@ -505,16 +507,15 @@ footer .meta{
   .page-head h1{ font-size:32px; }
   .hero .actions{ flex-wrap:wrap; row-gap:16px; }
   .contact-block h1{ font-size:30px; }
-  .clip-callout{ transform:translate(calc(-100% + 22px), -100%); }
   .clip-callout-arrow{ width:110px; }
-  .clip-callout-text{ font-size:19px; }
+  .clip-callout-text{ width:110px; font-size:16px; }
 }
 
 @media (max-width:520px){
   .ruler-track{ height:88px; }
-  .clip-callout{ transform:translate(calc(-100% + 16px), -100%); margin-bottom:10px; }
+  .clip-callout{ margin-bottom:10px; }
   .clip-callout-arrow{ width:86px; }
-  .clip-callout-text{ font-size:15px; }
+  .clip-callout-text{ width:86px; font-size:13px; }
   .moment-dot{ width:16px; height:16px; border-width:3px; }
   .grid, .podcast-grid{ grid-template-columns:1fr 1fr; }
   footer .row{ flex-direction:column; align-items:flex-start; }
@@ -636,7 +637,7 @@ a:focus-visible, button:focus-visible{
 .clip-callout{
   position:absolute;
   top:50%;
-  transform:translate(calc(-100% + 30px), -100%);
+  transform:translate(-100%, -100%);
   margin-bottom:14px;
   display:flex;
   flex-direction:column;
@@ -645,12 +646,14 @@ a:focus-visible, button:focus-visible{
   z-index:4;
 }
 .clip-callout-text{
+  width:140px;
+  align-self:center;
   font-family:'Caveat',cursive;
   font-weight:700;
-  font-size:24px;
-  line-height:1.2;
+  font-size:19px;
+  line-height:1.25;
   color:#ffffff;
-  text-align:right;
+  text-align:center;
   margin-bottom:2px;
 }
 .clip-callout-arrow{
