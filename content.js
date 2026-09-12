@@ -1,6 +1,8 @@
 const SITE = {
   email: "arbiujka@gmail.com",
-  linkedin: "https://linkedin.com/company/onbrand1"
+  linkedin: "https://linkedin.com/company/onbrand1",
+  phone: "+355 69 964 2150",
+  phoneIntl: "355699642150"
 };
 
 const CREATORS = [
@@ -75,7 +77,7 @@ const PODCASTS = [
   },
   {
     name: "Impaulsive",
-    img: "assets/impaulsive-logo.webp",
+    img: "assets/impaulsive-logo.png",
     link: "https://www.youtube.com/@Impaulsive",
     linkLabel: "YouTube"
   },
@@ -405,10 +407,12 @@ function renderGrowthGame(elementId, challenges){
 
     cardEl.innerHTML = `
       <div class="growth-head">
-        <img class="growth-logo" src="${esc(challenge.logo)}" alt="${esc(challenge.client)}">
+        <div class="growth-head-left">
+          <img class="growth-logo" src="${esc(challenge.logo)}" alt="${esc(challenge.client)}">
+          <p class="growth-sub" data-sub>Guess where we <span>started</span> working with them.</p>
+        </div>
         <span class="growth-metric-tag">${esc(challenge.metric)}</span>
       </div>
-      <p class="growth-sub" data-sub>Guess where we <span>started</span> working with them.</p>
       
       <div class="growth-chart-wrap">
         <svg class="growth-chart-svg" viewBox="0 0 ${dims.width} ${dims.height}" preserveAspectRatio="xMidYMid meet">
@@ -561,6 +565,17 @@ function wireMailLinks(){
   });
   document.querySelectorAll('[data-linkedin]').forEach(a => {
     a.href = SITE.linkedin;
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+  document.querySelectorAll('[data-phone-text]').forEach(a => {
+    a.textContent = SITE.phone;
+  });
+  document.querySelectorAll('[data-imessage]').forEach(a => {
+    a.href = "sms:" + SITE.phone.replace(/\s+/g, '');
+  });
+  document.querySelectorAll('[data-whatsapp]').forEach(a => {
+    a.href = "https://wa.me/" + SITE.phoneIntl;
     a.target = "_blank";
     a.rel = "noopener";
   });
