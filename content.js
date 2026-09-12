@@ -297,13 +297,13 @@ function renderHeroTimeline(elementId, data){
   const callout = `
     <div class="clip-callout" style="left:${lastPct}%;">
       <span class="clip-callout-text" aria-hidden="true">some of our<br>top performing clips</span>
-      <svg class="clip-callout-arrow" viewBox="0 0 150 90" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <svg class="clip-callout-arrow" viewBox="0 0 140 70" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <defs>
           <marker id="clip-callout-arrowhead" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
             <path d="M 0 1 L 10 5 L 0 9 z" fill="#ffffff"/>
           </marker>
         </defs>
-        <path d="M 6 12 C 55 4, 110 35, 140 74" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
+        <path d="M 70 4 C 96 8, 118 26, 126 54" stroke="#ffffff" stroke-width="2.5" fill="none" marker-end="url(#clip-callout-arrowhead)"/>
       </svg>
     </div>`;
 
