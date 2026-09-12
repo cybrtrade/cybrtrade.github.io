@@ -168,7 +168,7 @@ const GROWTH_CHALLENGES = [
     months: ["Oct 2023","Nov 2023","Dec 2023","Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025"],
     values: [121000, 125000, 128000, 130000, 170000, 190000, 200000, 212000, 220000, 226000, 228000, 230000, 232000, 236000, 238000, 242000, 245000],
     start: "Jan 2024",
-    context: "We started clipping It Is What It Is in January 2024. In the 13 months since, subscribers grew from 130K to 245K — nearly doubling."
+    context: "We started clipping It Is What It Is in January 2024. In the following 13 months, subscribers grew from 130K to 245K — nearly doubling."
   },
   {
     client: "Brilliant Idiots",
@@ -178,6 +178,7 @@ const GROWTH_CHALLENGES = [
     values: [106000, 107000, 108000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 140000, 143000, 148000, 152000, 156000, 158000, 159000, 160000, 170000, 178000, 183000, 200000, 215000, 230000, 245000, 248000, 250000, 260000, 258000, 257000, 255000, 254000, 252000, 250000],
     start: "Jul 2024",
     end: "Jan 2026",
+    endLabel: "Dec 2025",
     context: "We clipped for Brilliant Idiots starting in July 2024 until January 2026. During our run, followers surged from 138K up to 260K."
   }
 ];
@@ -531,7 +532,7 @@ function renderGrowthGame(elementId, challenges){
             <path d="M ${eStartX} ${eStartY} Q ${eCtrlX} ${stopPt.y - 30} ${stopPt.x} ${stopPt.y - 8}" 
                   stroke="#ffffff" stroke-width="2" fill="none" marker-end="url(#arrow-white-${cIdx})"/>
             <text x="${eStartX}" y="${eStartY - 6}" fill="#ffffff" font-size="12" font-weight="700" text-anchor="${eIsLeft ? 'start' : 'end'}">
-              Stopped: ${esc(challenge.end)}
+              Stopped: ${esc(challenge.endLabel || challenge.end)}
             </text>
           </g>
         `;
@@ -540,7 +541,7 @@ function renderGrowthGame(elementId, challenges){
           ? `<p class="growth-verdict growth-verdict-correct">Spot on!</p><p class="growth-context">${esc(challenge.context)}</p>`
           : `<p class="growth-verdict growth-verdict-wrong">Not quite!</p><p class="growth-context">${esc(challenge.context)}</p>`;
           
-        subText.innerHTML = `Clipping Period: <strong>${esc(challenge.start)}</strong> – <strong>${esc(challenge.end)}</strong>`;
+        subText.innerHTML = `Clipping Period: <strong>${esc(challenge.start)}</strong> – <strong>${esc(challenge.endLabel || challenge.end)}</strong>`;
 
       } else {
         feedback.innerHTML = startAccurate
