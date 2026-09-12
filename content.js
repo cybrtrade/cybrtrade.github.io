@@ -55,37 +55,49 @@ const PODCASTS = [
     name: "Flagrant",
     img: "assets/flagrant.png",
     link: "https://www.youtube.com/@OfficialFlagrant/",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "1.99M",
+    viewership: "~5M"
   },
   {
     name: "Iced Coffee Hour",
     img: "assets/iced-coffee-hour.avif",
     link: "https://www.youtube.com/@TheIcedCoffeeHour",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "1.65M",
+    viewership: "~4M"
   },
   {
     name: "Brilliant Idiots",
     img: "assets/brilliant-idiots.jpg",
     link: "https://www.youtube.com/@BrilliantIdiotsPod",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "446K",
+    viewership: "~3M"
   },
   {
     name: "It Is What It Is",
     img: "assets/it-is-what-it-is.jpeg",
     link: "https://www.youtube.com/@itiswhatitispodcast1",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "245K",
+    viewership: "~100K"
   },
   {
     name: "Impaulsive",
     img: "assets/impaulsive-logo.png",
     link: "https://www.youtube.com/@Impaulsive",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "4.83M",
+    viewership: "~7M"
   },
   {
     name: "Financial Audit",
     img: "assets/financial-audit-logo.png",
     link: "https://www.youtube.com/calebhammer",
-    linkLabel: "YouTube"
+    linkLabel: "YouTube",
+    subs: "3.73M",
+    viewership: "~35M+"
   }
 ];
 
@@ -209,9 +221,21 @@ function renderPodcastGrid(elementId, list){
   if(!el) return;
   el.innerHTML = list.map(p => `
     <a class="card podcast-card" href="${esc(p.link)}" target="_blank" rel="noopener">
-      <img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy">
+      <div class="podcast-card-top">
+        <img src="${esc(p.img)}" alt="${esc(p.name)}" loading="lazy">
+        <span class="profile-link">${esc(p.linkLabel)} ↗</span>
+      </div>
       <h3>${esc(p.name)}</h3>
-      <span class="profile-link">${esc(p.linkLabel)} ↗</span>
+      <div class="podcast-stats">
+        <div class="podcast-stat">
+          <span class="podcast-stat-value">${esc(p.subs)}</span>
+          <span class="podcast-stat-label">Subscribers</span>
+        </div>
+        <div class="podcast-stat">
+          <span class="podcast-stat-value">${esc(p.viewership)}</span>
+          <span class="podcast-stat-label">Monthly Views</span>
+        </div>
+      </div>
     </a>
   `).join('');
 }

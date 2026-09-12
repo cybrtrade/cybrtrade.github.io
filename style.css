@@ -382,10 +382,16 @@ section.people{ padding:80px 0; border-bottom:1px solid var(--line); }
 .card .info p{ margin:4px 0 0; color:var(--muted); font-size:13px; }
 .card .info a.profile-link{ display:inline-block; margin-top:10px; font-size:13px; color:var(--accent); }
 
-.podcast-card{ padding:20px; }
-.podcast-card img{ width:56px; height:56px; border-radius:6px; object-fit:cover; filter:grayscale(35%); }
+.podcast-card{ padding:20px; display:flex; flex-direction:column; }
+.podcast-card-top{ display:flex; align-items:flex-start; justify-content:space-between; gap:12px; }
+.podcast-card img{ width:72px; height:72px; border-radius:8px; object-fit:cover; filter:grayscale(35%); flex-shrink:0; }
 .podcast-card h3{ font-size:15px; font-weight:500; margin-top:14px; }
-.podcast-card a.profile-link{ display:inline-block; margin-top:8px; font-size:13px; color:var(--accent); }
+.podcast-card a.profile-link,
+.podcast-card .profile-link{ display:inline-block; font-size:13px; color:var(--accent); white-space:nowrap; padding-top:2px; }
+.podcast-stats{ display:flex; gap:24px; margin-top:14px; padding-top:14px; border-top:1px solid var(--line); }
+.podcast-stat{ display:flex; flex-direction:column; }
+.podcast-stat-value{ font-family:'Sora',sans-serif; font-size:16px; font-weight:700; color:var(--cream); }
+.podcast-stat-label{ font-size:11px; color:var(--muted); margin-top:3px; text-transform:uppercase; letter-spacing:.04em; }
 
 /* stats grid */
 .stats-grid{
