@@ -36,7 +36,7 @@ const CREATORS = [
     name: "Mike Majlak",
     role: "Content creator and host",
     img: "assets/mike-majlak.png",
-    link: "https://www.youtube.com/@mikemajlak",
+    link: "https://www.youtube.com/@mikemajlakvlogs",
     linkLabel: "YouTube"
   },
   {
