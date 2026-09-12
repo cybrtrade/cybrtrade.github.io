@@ -103,35 +103,31 @@ const EPISODE_TIMELINE = {
   moments: [
     {
       time: "0:14:20",
-      title: "Replace with the real caption for this clip",
-      views: "26M views",
-      thumb: "assets/clip1-flagrant.jpg",
-      clip: "https://www.instagram.com/reel/DDP30ELs4-r/",
-      clipLabel: "Watch on Instagram"
+      podcast: "Brilliant Idiots",
+      logo: "assets/brilliant-idiots.jpg",
+      views: "28M views",
+      clip: "https://www.instagram.com/reel/DDP30ELs4-r/"
     },
     {
       time: "0:41:05",
-      title: "Replace with the real caption for this clip",
-      views: "21M views",
-      thumb: "assets/clip2-brilliant-idiots.jpg",
-      clip: "https://www.instagram.com/reel/DLIKuZCR4Op/",
-      clipLabel: "Watch on Instagram"
+      podcast: "Flagrant",
+      logo: "assets/flagrant.png",
+      views: "5.8M views",
+      clip: "https://www.instagram.com/reel/DLIKuZCR4Op/"
     },
     {
       time: "1:08:50",
-      title: "Roasted On A Viet Nail Sakon",
+      podcast: "It Is What It Is",
+      logo: "assets/it-is-what-it-is.jpeg",
       views: "20M views",
-      thumb: "assets/clip3-ireland-boys.jpg",
-      clip: "https://www.youtube.com/shorts/-444slzA8Ag",
-      clipLabel: "Watch on YouTube"
+      clip: "https://www.youtube.com/shorts/-444slzA8Ag"
     },
     {
       time: "1:33:15",
-      title: "Replace with the real caption for this clip",
-      views: "5.8M views",
-      thumb: "assets/clip4-iced-coffee.jpg",
-      clip: "https://www.instagram.com/reel/DJE6Z-7OQhf/",
-      clipLabel: "Watch on Instagram"
+      podcast: "Flagrant",
+      logo: "assets/flagrant.png",
+      views: "21M views",
+      clip: "https://www.instagram.com/reel/DJE6Z-7OQhf/"
     }
   ]
 };
@@ -267,26 +263,15 @@ function renderHeroTimeline(elementId, data){
     const pct = Math.min(96, Math.max(4, (timecodeToSeconds(m.time) / totalSeconds) * 100));
     const align = pct < 15 ? 'align-left' : pct > 85 ? 'align-right' : '';
     const isIg = m.clip.includes('instagram');
-    const platformLabel = isIg ? 'Instagram' : 'YouTube';
+    const clipLabel = isIg ? 'Watch on Instagram' : 'Watch on YouTube';
     return `
       <a class="moment ${align}" style="left:${pct}%" href="${esc(m.clip)}" target="_blank" rel="noopener">
         <span class="moment-marker"><span class="moment-dot"></span></span>
         <span class="moment-card">
-          <span class="moment-media-wrap">
-            <img src="${esc(m.thumb)}" alt="" loading="eager">
-            <span class="moment-play-overlay">
-              <span class="moment-play-btn">
-                <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-              </span>
-            </span>
-          </span>
           <span class="moment-card-body">
-            <p>${esc(m.title)}</p>
-            <span class="moment-meta-row">
-              <span class="moment-views">${esc(m.views)}</span>
-              <span class="moment-platform-badge">${platformLabel}</span>
-            </span>
-            <span class="moment-card-cta">${esc(m.clipLabel || 'Watch the clip')} ↗</span>
+            <img class="moment-logo" src="${esc(m.logo)}" alt="${esc(m.podcast)}" loading="lazy">
+            <span class="moment-views">${esc(m.views)}</span>
+            <span class="moment-watch-btn">${clipLabel} ↗</span>
           </span>
         </span>
       </a>`;
