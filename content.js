@@ -105,7 +105,7 @@ const EPISODE_TIMELINE = {
       time: "0:14:20",
       podcast: "Brilliant Idiots",
       logo: "assets/brilliant-idiots.jpg",
-      views: "28M views",
+      views: "19M views",
       clip: "https://www.instagram.com/reel/DDP30ELs4-r/"
     },
     {
@@ -152,6 +152,7 @@ const QUOTES = [
 const GROWTH_CHALLENGES = [
   {
     client: "Flagrant",
+    logo: "assets/flagrant.png",
     metric: "Followers",
     months: ["Oct 2023","Nov 2023","Dec 2023","Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026","Feb 2026","Mar 2026","Apr 2026","May 2026","Jun 2026","Jul 2026"],
     values: [238000, 240000, 242000, 245000, 248000, 250000, 255000, 280000, 320000, 330000, 335000, 340000, 345000, 350000, 355000, 357000, 359000, 360000, 365000, 390000, 420000, 450000, 465000, 480000, 490000, 500000, 510000, 545000, 548000, 552000, 556000, 558000, 559000, 560000],
@@ -160,6 +161,7 @@ const GROWTH_CHALLENGES = [
   },
   {
     client: "It Is What It Is Podcast",
+    logo: "assets/it-is-what-it-is.jpeg",
     metric: "Subscribers",
     months: ["Oct 2023","Nov 2023","Dec 2023","Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025"],
     values: [121000, 125000, 128000, 130000, 170000, 190000, 200000, 212000, 220000, 226000, 228000, 230000, 232000, 236000, 238000, 242000, 245000],
@@ -168,6 +170,7 @@ const GROWTH_CHALLENGES = [
   },
   {
     client: "Brilliant Idiots",
+    logo: "assets/brilliant-idiots.jpg",
     metric: "Followers",
     months: ["Oct 2023","Nov 2023","Dec 2023","Jan 2024","Feb 2024","Mar 2024","Apr 2024","May 2024","Jun 2024","Jul 2024","Aug 2024","Sep 2024","Oct 2024","Nov 2024","Dec 2024","Jan 2025","Feb 2025","Mar 2025","Apr 2025","May 2025","Jun 2025","Jul 2025","Aug 2025","Sep 2025","Oct 2025","Nov 2025","Dec 2025","Jan 2026","Feb 2026","Mar 2026","Apr 2026","May 2026","Jun 2026","Jul 2026"],
     values: [106000, 107000, 108000, 132000, 133000, 134000, 135000, 136000, 137000, 138000, 140000, 143000, 148000, 152000, 156000, 158000, 159000, 160000, 170000, 178000, 183000, 200000, 215000, 230000, 245000, 248000, 250000, 260000, 258000, 257000, 255000, 254000, 252000, 250000],
@@ -402,7 +405,7 @@ function renderGrowthGame(elementId, challenges){
 
     cardEl.innerHTML = `
       <div class="growth-head">
-        <h3 class="growth-prompt">${esc(challenge.client)}</h3>
+        <img class="growth-logo" src="${esc(challenge.logo)}" alt="${esc(challenge.client)}">
         <span class="growth-metric-tag">${esc(challenge.metric)}</span>
       </div>
       <p class="growth-sub" data-sub>Guess where we <span>started</span> working with them.</p>
