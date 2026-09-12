@@ -557,7 +557,10 @@ footer .meta{
   .clip-callout-arrow{ width:86px; }
   .clip-callout-text{ width:86px; font-size:13px; }
   .moment-dot{ width:16px; height:16px; border-width:3px; }
-  .grid, .podcast-grid{ grid-template-columns:1fr 1fr; }
+  .grid{ grid-template-columns:1fr 1fr; }
+  .podcast-grid{ grid-template-columns:1fr; }
+  .podcast-card{ padding:16px; }
+  .podcast-card-top{ gap:16px; }
   footer .row{ flex-direction:column; align-items:flex-start; }
   .growth-card{ padding:20px; }
   .growth-logo{ height:48px; }
