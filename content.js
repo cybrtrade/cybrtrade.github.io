@@ -233,7 +233,7 @@ function renderPodcastGrid(elementId, list){
         </div>
         <div class="podcast-stat">
           <span class="podcast-stat-value">${esc(p.viewership)}</span>
-          <span class="podcast-stat-label">Monthly Views</span>
+          <span class="podcast-stat-label">Monthly Listeners</span>
         </div>
       </div>
     </a>
